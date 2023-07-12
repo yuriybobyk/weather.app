@@ -19,11 +19,12 @@ const Forecast = ({data}: Props) => {
                         <span className="font-thin"> {data.country}</span>
                     </h2>
                     <h1 className="text-4xl font-extrabold"><Degree temp={Math.round(today.main.temp)}/></h1>
+                    <p className="text-center text-sm">{today.weather[0].main} {today.weather[0].description}</p>
+                    <p className="text-sm text-center py-5">
+                        H: <Degree temp={Math.ceil(today.main.temp_max)}/> L: <Degree temp={Math.floor(today.main.temp_min)}/>
+                    </p>
                 </section>
-                <p className="text-center text-sm">{today.weather[0].main} {today.weather[0].description}</p>
-                <p className="text-sm text-center py-5">
-                    H: <Degree temp={today.main.temp_max}/> L: <Degree temp={today.main.temp_min}/>
-                </p>
+
             </div>
         </div>
     );
