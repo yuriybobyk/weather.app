@@ -1,5 +1,6 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import {optionType} from "../types";
+import {IForecast} from "../interfaces/forecast.interface";
 
 const Search = () => {
     const [term, setTerm] = useState<string>('');
@@ -8,7 +9,7 @@ const Search = () => {
 
     const [city, setCity] = useState<optionType | null>(null)
 
-    const [forecast, setForecast] = useState(null)
+    const [forecast, setForecast] = useState<IForecast | null>(null)
 
     const getSearchOptions = (value: string) => {
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=9fe532a04608b29121d76ffda602a586`).then(res => res.json()).then(data => setOptions(data))
