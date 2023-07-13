@@ -12,7 +12,7 @@ const Forecast = ({data}: Props) => {
 
     return (
         <div
-            className="w-full md:max-w-[650px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto bg-white bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg">
+            className="w-full mt-6 md:max-w-[650px] py-4 md:py-4 md:px-10 lg:px-24 h-full lg:h-auto bg-white bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg">
             <div className="mx-auto w-[300px]">
                 <section className="text-center">
                     <h2 className="text-2xl font-black">{data.name}
@@ -21,8 +21,19 @@ const Forecast = ({data}: Props) => {
                     <h1 className="text-4xl font-extrabold"><Degree temp={Math.round(today.main.temp)}/></h1>
                     <p className="text-center text-sm">{today.weather[0].main} {today.weather[0].description}</p>
                     <p className="text-sm text-center py-5">
-                        H: <Degree temp={Math.ceil(today.main.temp_max)}/> L: <Degree temp={Math.floor(today.main.temp_min)}/>
+                        H: <Degree temp={Math.ceil(today.main.temp_max)}/> L: <Degree
+                        temp={Math.floor(today.main.temp_min)}/>
                     </p>
+                </section>
+                <section>
+                    {data.list.map((item, i) => (
+                        <div key={i}>
+                            <p>{item.dt}</p>
+                            <img src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+                                 alt={`weather-icon-${item.weather[0].description}`}/>
+                            <p><Degree temp={Math.round(item.main.temp)}/></p>
+                        </div>
+                    ))}
                 </section>
 
             </div>
