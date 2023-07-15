@@ -49,7 +49,7 @@ const Search = () => {
 
     useEffect(() => {
         if (city) {
-            setTerm(setCity.name)
+            setTerm(city.name)
             setOptions([])
 
         }
