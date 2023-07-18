@@ -27,7 +27,7 @@ const Tile = ({icon, title, info, description}: Props): ReactElement => {
     const Icon = icons[icon]
     return (
         <article
-            className="w-[140px] h-[145px] text-zinc-700 bg-white/20 backdrop-blur-ls rounded drop-shadow-lg p-2 mx-3 flex flex-col justify-between">
+            className="w-[140px] h-[160px] text-zinc-700 bg-white/20 backdrop-blur-ls rounded drop-shadow-lg p-2 mx-3 flex flex-col justify-between">
             <div className="flex items-center text-sm font-bold">
                 <Icon/><h4 className="ml-1">{title}</h4>
             </div>

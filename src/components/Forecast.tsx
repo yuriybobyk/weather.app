@@ -55,10 +55,10 @@ const Forecast = ({ data }: Props) => {
                 </section>
 
                 <section className="flex overflow-x-scroll mt-12 pb-4 mb-5">
-                    <div className="w-[140px] h-[145px]  gap-1 text-xs font-bold flex flex-col items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg p-3 mx-3">
+                    <div className="w-[140px] h-[160px]  gap-1 text-xs font-bold flex flex-col items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg p-3 mx-3">
                         <Sunrise /> Sunrise <span className="mt-2 p-2">{getSunTime(data.sunrise)}</span>
                     </div>
-                    <div className="w-[140px] h-[145px] gap-1 text-xs font-bold flex flex-col items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg p-3 mx-3">
+                    <div className="w-[140px] h-[160px] gap-1 text-xs font-bold flex flex-col items-center bg-white/20 backdrop-blur-ls rounded drop-shadow-lg p-3 mx-3">
                         <Sunset /> Sunset <span className="mt-2 p-2">{getSunTime(data.sunset)}</span>
                     </div>
 
