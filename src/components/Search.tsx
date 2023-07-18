@@ -12,7 +12,7 @@ const Search = () => {
     const [forecast, setForecast] = useState<forecastType | null>(null)
 
     const getSearchOptions = (term: string) => {
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${term.trim()}&limit=5&appid=9fe532a04608b29121d76ffda602a586`).then(res => res.json()).then(data => setOptions(data))
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${term.trim()}&limit=5&appid=f8e3b9b11f7b534c3c28445639dcf776`).then(res => res.json()).then(data => setOptions(data))
     }
 
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +32,7 @@ const Search = () => {
 
     const getForecast =
         (city: optionType) => {
-            fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=9fe532a04608b29121d76ffda602a586`).then((res => res.json().then((data) => {
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=f8e3b9b11f7b534c3c28445639dcf776`).then((res => res.json().then((data) => {
                 const forecastData = {
                     ...data.city,
                     list: data.list.slice(0, 16)
