@@ -12,7 +12,7 @@ const Search = () => {
     const [forecast, setForecast] = useState<forecastType | null>(null)
 
     const getSearchOptions = (term: string) => {
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${term.trim()}&limit=5&appid=f8e3b9b11f7b534c3c28445639dcf776`).then(res => res.json()).then(data => setOptions(data))
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${term.trim()}&limit=3&appid=f8e3b9b11f7b534c3c28445639dcf776`).then(res => res.json()).then(data => setOptions(data))
     }
 
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
